@@ -1,23 +1,28 @@
 import React from "react";
-import logo from "./logo.svg";
-import styles from "./App.module.css";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Content from "./components/Content";
+import { Route, Router, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { StoreContextProvider } from './components/ContexProvider'
+import Dashboard from './views/Dashboard'
+import Login from './views/Login';
+import { ProtectedRoute } from './components/ProtectedRoute';
+const history = createBrowserHistory();
 
 function App() {
   return (
-    <div className={styles.App}>
-      <div className={styles.HeaderArea}>
-        <Header />
-      </div>
-      <div className={styles.SidebarArea}>
-        <Sidebar />
-      </div>
-      <div>
-        <Content />
-      </div>
-    </div>
+    <>
+      <StoreContextProvider>
+        <Router history={history}>
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <ProtectedRoute path="/">
+              <Dashboard />
+            </ProtectedRoute>
+          </Switch>
+        </Router>
+      </StoreContextProvider>
+    </>
   );
 }
 

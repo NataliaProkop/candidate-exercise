@@ -17,3 +17,35 @@
 .SidebarArea {
   background-color: #dddddd;
 }
+
+.Login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 50px;
+  background-color: #eeeeee;
+}
+
+.Login > div {
+  padding: 20px;
+}
+
+.LoginForm {
+  border-right: 1px solid #000;
+}
+
+.LoginRow {
+  padding: 5px;
+}
+
+.Login label {
+  display: inline-block;
+  min-width: 140px;
+}
+
+.SuccessMessage {
+  color: green;
+}
+
+.ErrorMessage {
+  color: red;
+}
