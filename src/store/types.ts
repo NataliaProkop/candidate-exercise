@@ -1,4 +1,4 @@
-import { IStore } from '../flux/types';
+import { IStore } from '../lib/types';
 
 export interface ISomeSecretData {
   secretInfo: string;
@@ -60,5 +60,3 @@ export interface CleanAction {
 }
 
 export type MyStoreActionTypes =  SetUserDataAction | SetSecretDataAction | CleanAction
-
-

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import * as EmailValidator from 'email-validator';
 import { useStore } from './ContexProvider';
-import { PASSWORD_REGEX } from '../utils/regexp'
+import { PASSWORD_REGEX } from '../utils/regexp';
 import styles from '../App.module.css';
 
 interface RegistrerFormProps { }

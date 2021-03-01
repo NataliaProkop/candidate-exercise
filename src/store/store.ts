@@ -1,4 +1,4 @@
-import { Store } from '../flux/store';
+import { Store } from '../lib/store';
 import { 
   IState, 
   IMyStore, 
@@ -6,8 +6,8 @@ import {
   ActionType,
   MyStoreActionTypes
 } from './types';
+import { PayloadAction } from '../lib/types';
 import { loginUser, registerUser, getSecretData } from './service';
-import { PayloadAction } from '../flux/types';
 
 const initialState = {
   someSecretData: null,
@@ -20,12 +20,12 @@ function reducer(action: PayloadAction, state: IState = initialState) {
     case ActionType.SET_USER_DATA:
       return {
         ...state,
-        userData: action.payload.userData
+        userData: incomingAction.payload.userData
       };
     case ActionType.SET_SECRET_DATA:
       return {
         ...state,
-        someSecretData: action.payload.someSecretData
+        someSecretData: incomingAction.payload.someSecretData
       }
     case ActionType.CLEAN:
       return initialState

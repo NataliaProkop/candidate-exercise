@@ -1,7 +1,7 @@
 export interface IStore<S> {
     state: S
-    reducer: <P>(action: PayloadAction<P>, state: S) => S;
-    dispatch: <P>(action: PayloadAction<P>) => void;
+    reducer: (action: PayloadAction, state: S) => S;
+    dispatch: (action: PayloadAction) => void;
     subscribe: (subscriber: () => void) => () => void;
 };
 

@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from 'react';
 import { MyStore } from '../store/store';
 import { IMyStore, IState } from '../store/types';
-import { useSelector, useDispatch } from '../flux/hooks';
+import { useSelector, useDispatch } from '../lib/hooks';
 
 const StoreContext = createContext<IMyStore>(new MyStore());
 
